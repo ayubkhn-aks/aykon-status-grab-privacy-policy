@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Status Grab</title>
+  <meta name="description" content="Privacy Policy for Status Grab – A WhatsApp status saver app by AandK Tech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #25D366;
+      --primary-dark: #128C7E;
+      --accent: #34B7F1;
+      --bg: #0a0f0d;
+      --surface: #111a15;
+      --surface-2: #182119;
+      --border: rgba(37, 211, 102, 0.15);
+      --text-primary: #f0f4f1;
+      --text-secondary: #9bb89f;
+      --text-muted: #6b8a6f;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a1f12 0%, #0d2b18 50%, #091a10 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% -10%, rgba(37,211,102,0.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 80% 80%, rgba(52,183,241,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .header-icon {
+      width: 80px; height: 80px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+      position: relative;
+    }
+    .header-icon svg { width: 44px; height: 44px; fill: #fff; }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .header-subtitle { color: var(--text-secondary); font-size: 1.05rem; }
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 20px; padding: 6px 16px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: 100px; font-size: 0.82rem;
+      color: var(--primary); font-weight: 500;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    /* META BAR */
+    .meta-bar {
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted); }
+    .meta-item span:first-child { color: var(--text-secondary); font-weight: 500; }
+
+    /* TOC */
+    .toc { margin: 48px auto; max-width: 820px; padding: 0 24px; }
+    .toc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; }
+    .toc-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--primary); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+    .toc-list a { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; padding: 6px 10px; border-radius: var(--radius-sm); transition: all 0.2s; }
+    .toc-list a:hover { background: rgba(37,211,102,0.08); color: var(--primary); }
+    .toc-list a::before { content: '→'; color: var(--primary); font-size: 0.8rem; }
+
+    /* SECTIONS */
+    .sections { padding: 0 0 80px; }
+    .section { max-width: 820px; margin: 0 auto 32px; padding: 0 24px; }
+    .section-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 36px 40px;
+      transition: border-color 0.3s;
+    }
+    .section-card:hover { border-color: rgba(37,211,102,0.3); }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .section-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(37,211,102,0.2), rgba(18,140,126,0.1));
+      border: 1px solid rgba(37,211,102,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .section-card h2 { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
+    .section-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 14px; }
+    .section-card p:last-child { margin-bottom: 0; }
+
+    /* INFO BOXES */
+    .info-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 16px 0; }
+    .info-box.green { border-color: rgba(37,211,102,0.25); background: rgba(37,211,102,0.05); }
+    .info-box.blue { border-color: rgba(52,183,241,0.25); background: rgba(52,183,241,0.05); }
+    .info-box.yellow { border-color: rgba(255,193,7,0.25); background: rgba(255,193,7,0.04); }
+
+    /* LISTS */
+    ul.styled, ol.styled { padding-left: 0; list-style: none; }
+    ul.styled li, ol.styled li {
+      display: flex; align-items: flex-start; gap: 10px;
+      color: var(--text-secondary); font-size: 0.95rem;
+      padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    ul.styled li:last-child, ol.styled li:last-child { border-bottom: none; }
+    ul.styled li::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* PERMISSION GRID */
+    .perm-grid { display: grid; gap: 12px; margin-top: 16px; }
+    .perm-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px; display: flex; align-items: flex-start; gap: 14px; }
+    .perm-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .perm-info h4 { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+    .perm-info p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+    .perm-badge { margin-left: auto; padding: 2px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; flex-shrink: 0; }
+    .perm-badge.required { background: rgba(37,211,102,0.12); color: var(--primary); border: 1px solid rgba(37,211,102,0.2); }
+
+    .highlight { color: var(--primary); font-weight: 600; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 8px 0 20px; }
+
+    /* CONTACT */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.05));
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: var(--radius); padding: 32px 40px; text-align: center;
+    }
+    .contact-card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+    .contact-card p { color: var(--text-secondary); margin-bottom: 20px; }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary); color: #000;
+      font-weight: 700; font-size: 0.95rem;
+      padding: 12px 28px; border-radius: 100px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .contact-email:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+    /* FOOTER */
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+
+    @media (max-width: 600px) {
+      .section-card, .contact-card, .toc-card { padding: 24px 20px; }
+      header { padding: 60px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 3H7C5.9 3 5 3.9 5 5v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
+      </svg>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="header-subtitle">Status Grab — WhatsApp Status Saver</p>
+    <div class="header-badge">
+      <span class="dot"></span>
+      Up to date &amp; GDPR compliant
+    </div>
+  </header>
+
+  <div class="meta-bar">
+    <div class="meta-item"><span>Developer:</span><span>AandK Tech</span></div>
+    <div class="meta-item"><span>Package:</span><span>com.aandktech.statusgrab</span></div>
+    <div class="meta-item"><span>Last Updated:</span><span>July 5, 2026</span></div>
+    <div class="meta-item"><span>Version:</span><span>1.0.0</span></div>
+  </div>
+
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-card">
+      <p class="toc-title">📋 Table of Contents</p>
+      <ul class="toc-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data-collected">Data We Collect</a></li>
+        <li><a href="#permissions">App Permissions</a></li>
+        <li><a href="#data-use">How We Use Data</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#storage">Data Storage</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#changes">Policy Changes</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="sections">
+
+    <section id="overview" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">🛡️</div>
+          <h2>Overview</h2>
+        </div>
+        <p><span class="highlight">Status Grab</span> is a utility application developed by <span class="highlight">AandK Tech</span> that allows users to view, save, and share WhatsApp statuses (photos and videos) directly from their Android device.</p>
+        <p>We are deeply committed to protecting your privacy. This Privacy Policy explains what information we access, why we access it, and how we handle it. By using Status Grab, you agree to the practices described in this policy.</p>
+        <div class="info-box green">
+          <strong>🔒 Short Version:</strong> Status Grab works entirely on your device. We do not collect, transmit, or store any personal data on external servers.
+        </div>
+      </div>
+    </section>
+
+    <section id="data-collected" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">📊</div>
+          <h2>Data We Collect</h2>
+        </div>
+        <p>Status Grab is designed with a <span class="highlight">privacy-first</span> approach. Here is a complete breakdown of what we do and do not collect:</p>
+        <div class="divider"></div>
+        <ul class="styled">
+          <li>We do <strong>NOT</strong> collect your name, email, or phone number</li>
+          <li>We do <strong>NOT</strong> collect location data of any kind</li>
+          <li>We do <strong>NOT</strong> read, access, or upload your WhatsApp messages or contacts</li>
+          <li>We do <strong>NOT</strong> share any data with third-party advertisers (ads are currently disabled)</li>
+          <li>We do <strong>NOT</strong> upload your photos or videos to any server</li>
+          <li>App preferences (e.g., dark/light theme) are stored <strong>locally</strong> on your device only</li>
+          <li>Saved status files remain <strong>only on your device</strong> in your chosen folder</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="permissions" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">🔑</div>
+          <h2>App Permissions</h2>
+        </div>
+        <p>Status Grab requests the following Android permissions. Each permission is used solely to deliver core app functionality on your device.</p>
+        <div class="perm-grid">
+          <div class="perm-item">
+            <div class="perm-icon">🖼️</div>
+            <div class="perm-info">
+              <h4>READ_MEDIA_IMAGES</h4>
+              <p>Displays image statuses from WhatsApp's local storage folder (Android 13+)</p>
+            </div>
+            <span class="perm-badge required">Required</span>
+          </div>
+          <div class="perm-item">
+            <div class="perm-icon">🎬</div>
+            <div class="perm-info">
+              <h4>READ_MEDIA_VIDEO</h4>
+              <p>Displays video statuses from WhatsApp's local storage folder (Android 13+)</p>
+            </div>
+            <span class="perm-badge required">Required</span>
+          </div>
+          <div class="perm-item">
+            <div class="perm-icon">📁</div>
+            <div class="perm-info">
+              <h4>READ_EXTERNAL_STORAGE</h4>
+              <p>Reads WhatsApp status files on Android 12 and below (maxSdkVersion 32)</p>
+            </div>
+            <span class="perm-badge required">Required</span>
+          </div>
+          <div class="perm-item">
+            <div class="perm-icon">💾</div>
+            <div class="perm-info">
+              <h4>Storage Access Framework (SAF)</h4>
+              <p>Grants scoped access to the specific WhatsApp folder only — no broad storage access</p>
+            </div>
+            <span class="perm-badge required">Required</span>
+          </div>
+        </div>
+        <div class="info-box yellow" style="margin-top: 20px;">
+          ⚠️ <strong>Note:</strong> Status Grab only accesses files within the WhatsApp status folder on your device. It does not scan, read, or modify any other files on your phone.
+        </div>
+      </div>
+    </section>
+
+    <section id="data-use" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">⚙️</div>
+          <h2>How We Use Data</h2>
+        </div>
+        <p>All data processing in Status Grab happens <span class="highlight">locally on your device</span>. Here is exactly what each feature does:</p>
+        <div class="divider"></div>
+        <ul class="styled">
+          <li><strong>Status Browser:</strong> Reads WhatsApp status files from local device storage and displays them within the app only</li>
+          <li><strong>Save Status:</strong> Copies selected media to your chosen folder on your device — no upload, no server</li>
+          <li><strong>Share Status:</strong> Uses Android's native share sheet to share files via apps you choose (e.g., WhatsApp, Telegram)</li>
+          <li><strong>Saved Status Gallery:</strong> Displays previously saved files from your local device folder</li>
+          <li><strong>Theme Preference:</strong> Stores dark/light mode preference locally using SharedPreferences</li>
+          <li><strong>App Settings:</strong> All settings are stored entirely on-device, never synced externally</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="third-party" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">🔗</div>
+          <h2>Third-Party Services</h2>
+        </div>
+        <p>Status Grab includes the following third-party libraries. Their privacy policies apply when they are active:</p>
+        <div class="divider"></div>
+        <ul class="styled">
+          <li><div><strong>Google Mobile Ads (AdMob)</strong> — Integrated but <span class="highlight">currently disabled</span>. No ads are shown and no ad-related data is collected in this version.</div></li>
+          <li><div><strong>Google Fonts</strong> — Fonts may be loaded from Google servers during first launch on some devices. No personal data is involved.</div></li>
+          <li><div><strong>Flutter Framework (Google)</strong> — The underlying app framework. No personal data is collected by the framework itself.</div></li>
+        </ul>
+        <div class="info-box blue" style="margin-top: 16px;">
+          ℹ️ If ads are enabled in a future version, this policy will be updated to reflect AdMob data practices, including the types of data Google collects for advertising.
+        </div>
+      </div>
+    </section>
+
+    <section id="children" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">👶</div>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>Status Grab is designed for users <span class="highlight">aged 16 and above</span>, as WhatsApp itself requires users to be at least 13–16 years old depending on the region.</p>
+        <p>We do not knowingly collect any personal information from children under the age of 13. If you believe a child has used our app and provided personal information, please contact us immediately and we will take appropriate steps.</p>
+      </div>
+    </section>
+
+    <section id="storage" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">💽</div>
+          <h2>Data Storage &amp; Security</h2>
+        </div>
+        <p>All data generated by Status Grab — including saved media files and app preferences — is stored exclusively on <span class="highlight">your local device</span>.</p>
+        <ul class="styled">
+          <li>No user data is transmitted to AandK Tech servers or any third-party servers</li>
+          <li>Saved status files are stored in a folder you grant access to, on your own device</li>
+          <li>App preferences are stored using Android's SharedPreferences (local, encrypted by the OS)</li>
+          <li>You can delete all app data via Android Settings → Apps → Status Grab → Clear Data</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="your-rights" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">⚖️</div>
+          <h2>Your Rights</h2>
+        </div>
+        <p>Since Status Grab does not collect personal data on external servers, most traditional data rights are fulfilled automatically — all your data stays on your device. You also have the following rights:</p>
+        <div class="divider"></div>
+        <ul class="styled">
+          <li>Revoke any permission at any time via Android Settings → Apps → Status Grab → Permissions</li>
+          <li>Delete all saved status files from your device storage at any time</li>
+          <li>Uninstall the app to remove all app preferences and cached data</li>
+          <li>Contact us at any time regarding privacy concerns</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="changes" class="section">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-icon">📝</div>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <p>We may update this Privacy Policy from time to time — for example, if we enable ads, add new features, or if there are changes in applicable law. When we make changes, we will update the <span class="highlight">"Last Updated"</span> date at the top of this page.</p>
+        <p>We encourage you to review this Privacy Policy periodically. Continued use of Status Grab after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact-card">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">✉️</div>
+        <h2>Contact Us</h2>
+        <p>Have questions or concerns about this Privacy Policy?<br />We're happy to help — reach out anytime.</p>
+        <a class="contact-email" href="mailto:privacy@aandktech.com">
+          📧 privacy@aandktech.com
+        </a>
+        <p style="margin-top: 20px; font-size: 0.82rem; color: var(--text-muted);">
+          Developer: AandK Tech &nbsp;|&nbsp; App: Status Grab &nbsp;|&nbsp; Package: com.aandktech.statusgrab
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <strong>AandK Tech</strong>. All rights reserved.</p>
+    <p style="margin-top: 6px;">Status Grab — Privacy Policy &nbsp;|&nbsp; Built with ❤️ for a privacy-first world</p>
+  </footer>
+
+</body>
+</html>
